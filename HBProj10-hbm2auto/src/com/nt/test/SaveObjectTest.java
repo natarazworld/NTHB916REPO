@@ -19,8 +19,9 @@ public class SaveObjectTest {
 		try(factory;ses){
 		//prpeare  Entity class obj having data
 		Product p=new Product();
-		p.setPid(9021); p.setPname("table6");
-		p.setPrice(9000.55);
+		p.setPid(9021); p.setPname("chair");
+		p.setPrice(8000.55);
+		p.setQty(20.0); p.setStatus("avaiable"); 
 		//begin Tx
 			tx=ses.beginTransaction();  //internally calls con.setAutoCommit(false)
 			//save object
