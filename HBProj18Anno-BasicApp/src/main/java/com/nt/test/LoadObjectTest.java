@@ -10,30 +10,19 @@ import org.hibernate.Transaction;
 import com.nt.entity.Artist;
 import com.nt.utility.HibernateUtil;
 
-public class SaveObjectTest {
+public class LoadObjectTest {
 
 	public static void main(String[] args) {
 		   //get SessionFactory
 		SessionFactory factory=HibernateUtil.getSessionFactory();
          Session ses=HibernateUtil.getSession();
-         Transaction tx=null;
+        
          try(factory;ses){
-        	 //begin Tx
-        	 tx=ses.beginTransaction();
-        	 //prepare object
-        	 //Artist arst=new Artist(2335,"raja","hyd",453534534L,"hereo");
-        	 Artist arst=new Artist();
-        	 arst.setAid(4146);
-        	 arst.setName("HRK1");
-        	 arst.setCategory("hero");
-        	   Integer idval=(Integer) ses.save(arst);
-        	   System.out.println("generated  id vakue::"+idval);
-        	   tx.commit();
-         }//try
+              Artist arts=ses.load(Artist.class, 2335);
+              System.out.println(arts);
+                 }//try
          catch(HibernateException he){
-           if(tx!=null ||tx.getRollbackOnly() || tx.getStatus()!=null) {
-        	   tx.rollback();
-           }
+        	 System.out.println("Problem in Loading record/object");
         	   he.printStackTrace();
          }
          catch(Exception e){

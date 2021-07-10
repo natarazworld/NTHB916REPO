@@ -28,8 +28,9 @@ public class SaveObjectTest {
 		System.out.println("session obj class name::"+ses.getClass());
 		//prpeare  Entity class obj having data
 		Product p=new Product();
-		p.setPid(9021); p.setPname("table");
+		p.setPid(9045); p.setPname("table10");
 		p.setPrice(9000.55); 
+		p.setStatus("hello");
 		//save object
 		Transaction tx=null;
 		boolean flag=false;
