@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+     <hibernate-configuration>
+        <session-factory>
+              
+         <!-- hibernate properties -->
+              <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+              <property name="show_sql">true</property>
+              <property name="format_sql">true</property>
+              <property name="hbm2ddl.auto">update</property>
+              
+              <property name="connection.provider_class">com.nt.service.ApacheDBCp2ConnectionProvider</property>
+              
+           <!-- specify mapping class -->
+           <mapping class="com.nt.entity.MobilePhoneUser"/>  
+        </session-factory>
+     </hibernate-configuration>
