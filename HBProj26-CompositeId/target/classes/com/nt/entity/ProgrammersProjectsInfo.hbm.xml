@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name="com.nt.entity.ProgrammersProjectsInfo">
+       <!-- composite id field -->
+       <composite-id name="id" class="com.nt.entity.PrgmrProjId">
+            <key-property name="pid" type="integer"/>
+            <key-property name="projId"  type="integer"/>
+        </composite-id>
+       <property name="pname" type="string"  length="20"/>
+       <property name="projName" type="string"  length="15"/>
+       <property name="teamSize" type="integer" />
+   </class>
+     
+</hibernate-mapping>        
