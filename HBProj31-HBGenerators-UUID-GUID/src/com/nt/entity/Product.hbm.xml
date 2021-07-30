@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+     <class  name="com.nt.entity.Product"  table="PRODUCT_UID"  >
+         <id name="pid"  column="PID">  <!-- Singular ID field cfg -->
+              <!-- <generator class="identity"/> -->
+           <!--    <generator class="increment"/> -->
+            <!--   <generator class="sequence"/> -->
+             <!--  <generator class="sequence">
+                  <param name="sequence_name">PROD_ID_SEQ2</param>
+                  <param name="initial_value">600</param>
+                  <param name="increment_size">10</param>
+              </generator> -->
+              <!--  <generator class="seqhilo">
+                   <param name="sequence">PROD_ID_SEQ</param>
+                   <param name="max_lo">5</param>
+               </generator> -->
+                 <!-- <generator class="seqhilo"/> -->
+                 <!--  <generator class="seqhilo">
+                       <param name="sequence">PROD_ID_SEQ3</param>
+                      <param name="max_lo">5</param>
+                  </generator> -->
+                  <!-- <generator class="native"/> -->
+<!--            <generator class="native">
+                     <param name="sequence_name">PROD_ID_SEQ5</param>
+                     <param name="initial_value">1000</param>
+                     <param name="increment_size">10</param>
+                  </generator> -->
+                  <!--  <generator class="native">
+                     <param name="sequence_name">PROD_ID_SEQ3</param>
+                  </generator> -->
+                  
+               <!--    <generator class="native"/> -->
+               
+             <!--     <generator class="uuid"/> -->
+                   <generator class="guid"/>
+                 
+                 
+                  
+          </id> 
+         <property name="pname" column="PNAME"/>
+         <property name="price" column="PRICE"/>
+         <property name="qty" column="QTY"/>
+         <property name="status" column="STATUS"/>
+     </class>
+</hibernate-mapping>        
