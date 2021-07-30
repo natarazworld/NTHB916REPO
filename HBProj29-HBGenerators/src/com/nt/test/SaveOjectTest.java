@@ -11,15 +11,15 @@ import com.nt.utility.HibernateUtil;
 public class SaveOjectTest {
 
 	public static void main(String[] args) {
+		try {
 		//get SessionFactory
 		SessionFactory factory=HibernateUtil.getSessionFactory();
 		//get Session
 		Session ses=HibernateUtil.getSession();
 		Transaction tx=null;
-		try(factory;ses){
 			 tx=ses.beginTransaction();
                   Product p=new Product();
-                   p.setPname("sofa5");
+                   p.setPname("sofa7");
                   p.setPrice(5455.0);p.setQty(55.77);
                   p.setStatus("avaiable");
 			       int idVal=(Integer)ses.save(p); 
